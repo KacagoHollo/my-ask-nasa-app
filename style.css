@@ -1,7 +1,11 @@
+#root {
+  overflow: hidden;
+}
 #picture {
   width: 1000px;
+  max-width: 1000px;
 }
 
-#nasaPic {
+img {
   width: 100%;
 }
