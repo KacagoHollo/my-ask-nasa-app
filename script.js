@@ -27,7 +27,12 @@ async function changeDay (event) {
     
     document.querySelector("#title").innerHTML = selectedDate.title;
     let imageke = document.querySelector("#picture");
-    imageke.appendChild(document.createElement('img')).src = selectedDate.hdurl;
+    // document.body.style.backgroundImage = `${selectedDate.hdurl}`;
+    // imageke.appendChild(document.createElement('img')).src = selectedDate.hdurl; 
+        // document.getElementById("picture").insertAdjacentHTML("beforeend", `
+        //     <img src="${selectedDate.hdurl}">
+        // `);
+    imageke.style.backgroundImage = `url(${selectedDate.hdurl})`;
     document.querySelector("#explanation").innerHTML = selectedDate.explanation;
     // imageke.removeChild(imageke.firstChild);
     
@@ -38,12 +43,6 @@ async function callNasa(date) {
     const nasaRes = await fetch(`https://api.nasa.gov/planetary/apod?api_key=rFfuSutBjglJbWQ6AczIXf7RBVh4EKgjZKlG0Tuv&date=${date}`);
     const nasaData = await nasaRes.json();
     
-    // let nasaObj = {
-    //     date: nasaData.date,
-    //     title: nasaData.title,
-    //     image: nasaData.hdurl,
-    //     exp: nasaData.explanation
-    // };
     console.log(nasaData);
     
     return nasaData;
