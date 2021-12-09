@@ -1,13 +1,13 @@
 function loadEvent() { 
     changeDay();
     document.getElementById("root").insertAdjacentHTML("beforeend", `
-    <div id="title"></div>
-    <div id="picture"></div>
-    <div><p id="explanation"></p></div>
     <form class="datIng">
     <label>Choose your preferred date:</label>
     <input type="date" name="dateSelector" required pattern="\d{4}-\d{2}-\d{2}">>
     </form>
+    <div id="title"></div>
+    <div id="picture"></div>
+    <div><p id="explanation"></p></div>
     `
     );
 
@@ -32,7 +32,7 @@ async function changeDay (event) {
         // document.getElementById("picture").insertAdjacentHTML("beforeend", `
         //     <img src="${selectedDate.hdurl}">
         // `);
-    imageke.style.backgroundImage = `url(${selectedDate.hdurl})`;
+    imageke.style.backgroundImage = `url(${selectedDate.url})`;
     document.querySelector("#explanation").innerHTML = selectedDate.explanation;
     // imageke.removeChild(imageke.firstChild);
     
