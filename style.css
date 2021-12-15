@@ -1,12 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  outline: none;
+  text-decoration: none;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+ol,
+ul,
+li {
+  list-style: none;
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a img {
+  border: none;
+}
+
+button,
+a {
+  cursor: pointer;
+  color: inherit;
+}
+
+textarea {
+  resize: none;
+}
+
+button,
+input,
+textarea,
+select {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  border-radius: 0;
+}
+
+/* end of css reset */
+iframe#video #document html body {
+  height: 600px;
+}
+
 #root {
   overflow: hidden;
+  width: 100vw;
 }
-#picture {
-  width: 800px;
-  height: 600px;
-  max-width: 800px;
 
+div.media {
   margin: 0 auto;
+  width: auto;
+  height: 600px;
+  max-width: 900px;
+}
+
+#picture {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: cover;
+}
+
+#video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
 }
 
 #title {
@@ -24,4 +89,21 @@ form {
 p {
   margin-right: 30px;
   margin-left: 30px;
+  margin-top: 30px;
 }
+
+#video {
+  border: none;
+  position: absolute;
+  left: 50vw;
+  transform: translate(-50%, 0);
+  width: 900px;
+  height: 600px;
+
+  z-index: 1000;
+}
+
+/* #picture > img {
+  display: block;
+  margin: auto;
+} */

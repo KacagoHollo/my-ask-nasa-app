@@ -2,12 +2,17 @@ function loadEvent() {
     changeDay();
     document.getElementById("root").insertAdjacentHTML("beforeend", `
     <form class="datIng">
-    <label>Choose your preferred date:</label>
-    <input type="date" name="dateSelector" required pattern="\d{4}-\d{2}-\d{2}">>
+        <label>Choose your preferred date:</label>
+        <input type="date" name="dateSelector" required pattern="\d{4}-\d{2}-\d{2}">>
     </form>
     <div id="title"></div>
-    <div id="picture"></div>
-    <div><p id="explanation"></p></div>
+    <div class="media">
+        <iframe id="video" media_type:"video" src""></iframe>
+        <img id="picture" media_type:"image" src=""> 
+    </div>
+    <div>
+        <p id="explanation">
+    </p></div>
     `
     );
 
@@ -21,21 +26,25 @@ async function changeDay (event) {
     const selectedDate = await callNasa(event.target.value);
     let dateOfSelect = selectedDate.date;
 
-    // let title = selectedDate.title;
-    // let hdurl = selectedDate.hdurl;
-    // let explanation = selectedDate.explanation;
-    
     document.querySelector("#title").innerHTML = selectedDate.title;
-    let imageke = document.querySelector("#picture");
-    // document.body.style.backgroundImage = `${selectedDate.hdurl}`;
-    // imageke.appendChild(document.createElement('img')).src = selectedDate.hdurl; 
-        // document.getElementById("picture").insertAdjacentHTML("beforeend", `
-        //     <img src="${selectedDate.hdurl}">
-        // `);
-    imageke.style.backgroundImage = `url(${selectedDate.url})`;
-    document.querySelector("#explanation").innerHTML = selectedDate.explanation;
-    // imageke.removeChild(imageke.firstChild);
     
+    let imageke = document.querySelector("#picture");
+    let vidio = document.querySelector("#video");
+
+    if (selectedDate.media_type === "image") {
+    imageke.style.backgroundImage = `url(${selectedDate.url})`;
+    vidio.src = "";
+    vidio.autoplay = false; 
+
+    }
+    if (selectedDate.media_type === "video") {
+    imageke.style.backgroundColor = "";
+    imageke.style.opacity = "";
+    vidio.src = `${selectedDate.url}`;
+    vidio.autoplay = true;
+    }
+    document.querySelector("#explanation").innerHTML = selectedDate.explanation;
+       
     return dateOfSelect;
 }
 
