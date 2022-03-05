@@ -43,13 +43,42 @@ select {
 }
 
 /* end of css reset */
+
 iframe#video #document html body {
   height: 600px;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 #root {
-  overflow: hidden;
   width: 100vw;
+  height: 125vh;
+
+  background: rgb(214, 215, 217);
+  background: -moz-radial-gradient(
+    circle,
+    rgba(214, 215, 217, 1) 10%,
+    rgba(225, 243, 248, 1) 45%,
+    rgba(16, 91, 216, 1) 100%
+  );
+  background: -webkit-radial-gradient(
+    circle,
+    rgba(214, 215, 217, 1) 10%,
+    rgba(225, 243, 248, 1) 45%,
+    rgba(16, 91, 216, 1) 100%
+  );
+  background: radial-gradient(
+    circle,
+    rgba(214, 215, 217, 1) 10%,
+    rgba(225, 243, 248, 1) 45%,
+    rgba(16, 91, 216, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d6d7d9",endColorstr="#105bd8",GradientType=1);
+
+  text-align: center;
+  padding: 20px 0;
 }
 
 div.media {
@@ -57,6 +86,13 @@ div.media {
   width: auto;
   height: 600px;
   max-width: 900px;
+
+  background-image: url("/images/nasa-logo-web-rgb.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  box-shadow: -10px 10px 90px #323a45;
 }
 
 #picture {
@@ -76,9 +112,18 @@ div.media {
 
 #title {
   font-weight: 800;
-  font-size: 24px;
+  font-size: 32px;
   text-align: center;
   margin-bottom: 20px;
+
+  color: #046b99;
+}
+
+#explanation {
+  text-align: justify;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
 }
 
 form {
@@ -103,7 +148,43 @@ p {
   z-index: 1000;
 }
 
-/* #picture > img {
-  display: block;
-  margin: auto;
-} */
+h1 {
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.1rem;
+  font-size: 44px;
+
+  color: #0b3d91;
+  text-shadow: 1px 0.5px rgba(16, 91, 216, 1);
+}
+
+label {
+  color: #061f4a;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 700;
+
+  font-size: 18px;
+}
+
+input {
+  margin: 20px 0 10px;
+  font-size: 20px;
+  color: #046b99;
+
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 700;
+}
+
+input:hover {
+  background-color: #9bdaf1;
+  border-radius: 8px;
+}
+
+div#exp {
+  background-color: rgba(194, 207, 235, 0.2);
+  margin: 0 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgb(214, 215, 217, 0.8);
+  max-width: 97.5%;
+}

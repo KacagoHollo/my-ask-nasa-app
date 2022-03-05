@@ -2,6 +2,7 @@ function loadEvent() {
     changeDay();
     document.getElementById("root").insertAdjacentHTML("beforeend", `
     <form class="datIng">
+        <h1>My 'Ask NASA' App </h1>
         <label>Choose your preferred date:</label>
         <input type="date" name="dateSelector" required pattern="\d{4}-\d{2}-\d{2}">>
     </form>
@@ -10,7 +11,7 @@ function loadEvent() {
         <iframe id="video" media_type:"video" src""></iframe>
         <img id="picture" media_type:"image" src=""> 
     </div>
-    <div>
+    <div id="exp">
         <p id="explanation">
     </p></div>
     `
