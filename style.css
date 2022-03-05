@@ -87,7 +87,7 @@ div.media {
   height: 600px;
   max-width: 900px;
 
-  background-image: url("../images/nasa-logo-web-rgb.png");
+  background-image: url("./images/nasa-logo-web-rgb.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
