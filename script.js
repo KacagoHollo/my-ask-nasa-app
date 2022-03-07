@@ -52,11 +52,15 @@ async function changeDay (event) {
 async function callNasa(date) {
     const nasaRes = await fetch(`https://api.nasa.gov/planetary/apod?api_key=rFfuSutBjglJbWQ6AczIXf7RBVh4EKgjZKlG0Tuv&date=${date}`);
     const nasaData = await nasaRes.json();
-    
-    console.log(nasaData);
-    
-    return nasaData;
-} 
 
+    if (nasaData.code === 400) {
+        document.querySelector("#title").innerHTML = "Date must be between Jun 16, 1995 and Mar 07, 2022.!";
+        document.querySelector("#picture").style.backgroundImage = "url(./images/yoda.jpg)";
+        document.querySelector("#picture").style.backgroundSize = "900px 600px";
+    }
+    else {
+        return nasaData;
+    }
+} 
 
 window.addEventListener("load", loadEvent);
